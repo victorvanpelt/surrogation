@@ -9,14 +9,8 @@ class Introduction(Page):
 class Introduction(Page):
     pass
 
-class MyPage(Page):
+class Choice(Page):
     pass
-
-class ResultsWaitPage(WaitPage):
-
-    def after_all_players_arrive(self):
-        pass
-
 
 class Results(Page):
     pass
@@ -24,7 +18,6 @@ class Results(Page):
 
 page_sequence = [
     Introduction,
-    MyPage,
-    ResultsWaitPage,
+    Choice,
     Results
 ]

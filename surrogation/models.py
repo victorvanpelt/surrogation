@@ -1,7 +1,8 @@
 from otree.api import (
     models, widgets, BaseConstants, BaseSubsession, BaseGroup, BasePlayer,
-    Currency as c, currency_range
+    Currency as c, currency_range,
 )
+import random
 
 
 author = 'Victor and Farah'
@@ -13,7 +14,7 @@ The Surrogation Game
 
 class Constants(BaseConstants):
     name_in_url = 'surrogation'
-    players_per_group = 1
+    players_per_group = None
     num_rounds = 1
 
 
@@ -26,7 +27,7 @@ class Subsession(BaseSubsession):
             print('set player.surrogation to', player.surrogation)
 
             if player.surrogation == 'yes':
-                player.measure_skill = random.choice(['abilities', 'Attack', 'Socialize', 'Speed', 'Health'])
+                player.measure_skill = random.choice(['Abilities', 'Attack', 'Socialize', 'Speed', 'Health'])
                 print('set player.measure_skill to', player.measure_skill)
 
 class Group(BaseGroup):
