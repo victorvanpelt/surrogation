@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Questionnaire
+{% endblock %}
+
+{% block content %}
+
+<div class="instructions">
+    In this study, we ask you to generate a fictional character by distributing 100 skill points to five different skill dimensions.<br>
+    While there is no difference in the importance of between different skill dimensions, you are free to distribute the 100 skill points any way you would like.<br>
+    {% if player.surrogation == "yes" %}
+        We are measuring {{ player.measure_skill }} of all participants<br>
+    {% endif %}
+    We also ask you to respond truthfully and to the best of your ability.<br>
+</div>
+
+    {% next_button %}
+
+{% endblock %}

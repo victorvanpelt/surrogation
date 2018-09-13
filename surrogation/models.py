@@ -4,10 +4,10 @@ from otree.api import (
 )
 
 
-author = 'Your name here'
+author = 'Victor and Farah'
 
 doc = """
-Your app description
+The Surrogation Game
 """
 
 
@@ -18,12 +18,21 @@ class Constants(BaseConstants):
 
 
 class Subsession(BaseSubsession):
-    pass
 
+    def creating_session(self):
+        # randomize to treatments
+        for player in self.get_players():
+            player.surrogation = random.choice(['yes', 'no'])
+            print('set player.surrogation to', player.surrogation)
+
+            if player.surrogation == 'yes':
+                player.measure_skill = random.choice(['abilities', 'Attack', 'Socialize', 'Speed', 'Health'])
+                print('set player.measure_skill to', player.measure_skill)
 
 class Group(BaseGroup):
     pass
 
 
 class Player(BasePlayer):
-    pass
+    surrogation = models.StringField()
+    measure_skill = models.StringField()
