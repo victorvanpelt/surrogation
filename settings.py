@@ -18,6 +18,12 @@ SESSION_CONFIGS = [
     #    'num_demo_participants': 3,
     #    'app_sequence': ['public_goods', 'payment_info'],
     #},
+    {
+        'name': 'surrogation',
+        'display_name': "Surrogation Game",
+        'num_demo_participants': 1,
+        'app_sequence': ['surrogation']
+    }
 ]
 
 
