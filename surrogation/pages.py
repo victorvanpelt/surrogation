@@ -3,14 +3,13 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 class Introduction(Page):
-    form_model = 'player'
-    form_fields = ['surrogation', 'measure_skill']
-
-class Introduction(Page):
     pass
+    form_model = 'player'
+    form_fields = ['accept_instructions']
 
 class Choice(Page):
-    pass
+    form_model = 'player'
+    form_fields = ['accept_character', 'gender', 'intelligence', 'strength', 'charisma', 'agility', 'stamina']
 
 class Results(Page):
     pass
